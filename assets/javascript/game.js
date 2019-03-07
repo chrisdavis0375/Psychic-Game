@@ -16,8 +16,10 @@ document.onkeyup = function(guess) {
     }
 
     if (userGuess !== computerChoice) {
-        document.getElementById("guessesSoFar").innerHTML = userGuess + guessedLetters  
+        guessedLetters.push(userGuess);
+        document.getElementById("guessesSoFar").innerHTML = guessedLetters;
         guessesLeft--;
+        userGuess = guessedLetters;
     }
 
     if (guessesLeft === 0) {
